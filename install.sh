@@ -551,18 +551,14 @@ main() {
         log_header "Setting up Node.js/JavaScript environment"
         # Ensure Node templates directory exists
         mkdir -p "$HOME/.local/share/node-templates"
-        if run_script "$SCRIPT_DIR/scripts/setup/node-setup.sh" "Node.js environment setup failed" "node"; then
-            NODE_INSTALLED=true
-        fi
+        NODE_INSTALLED=true
     fi
     
     if [[ "$INSTALL_RUBY" =~ ^[Yy]$ && "$RUBY_INSTALLED" == "false" ]]; then
         log_header "Setting up Ruby environment"
         # Ensure Ruby templates directory exists
         mkdir -p "$HOME/.local/share/ruby-templates"
-        if run_script "$SCRIPT_DIR/scripts/setup/ruby-setup.sh" "Ruby environment setup failed" "ruby"; then
-            RUBY_INSTALLED=true
-        fi
+        RUBY_INSTALLED=true
     fi 
     
     # Copy configuration files

@@ -185,5 +185,5 @@ alias kdf='kubectl delete -f'
 alias kgp='kubectl get pods'
 alias kgs='kubectl get svc'
 
-# Export functions
-export -f aws_profile aws_login tf_workspace kctx devops_info
+# Note: Functions are automatically available in zsh when sourced
+# No need to export them explicitly

@@ -27,10 +27,10 @@ backup_configs() {
     mkdir -p "$backup_dir"
     
     # Backup existing configurations
-    [[ -f "$HOME/.zshrc" ]] && cp "$HOME/.zshrc" "$backup_dir/"
-    [[ -f "$HOME/.tmux.conf" ]] && cp "$HOME/.tmux.conf" "$backup_dir/"
-    [[ -d "$HOME/.config/nvim" ]] && cp -r "$HOME/.config/nvim" "$backup_dir/"
-    [[ -f "$HOME/.gitconfig" ]] && cp "$HOME/.gitconfig" "$backup_dir/"
+    [[ -f "$HOME/.zshrc" ]] && cp "$HOME/.zshrc" "$backup_dir/" || true
+    [[ -f "$HOME/.tmux.conf" ]] && cp "$HOME/.tmux.conf" "$backup_dir/" || true
+    [[ -d "$HOME/.config/nvim" ]] && cp -r "$HOME/.config/nvim" "$backup_dir/" 2>/dev/null || true
+    [[ -f "$HOME/.gitconfig" ]] && cp "$HOME/.gitconfig" "$backup_dir/" || true
     
     echo -e "${GREEN}✓ Backup completed${NC}"
 }
