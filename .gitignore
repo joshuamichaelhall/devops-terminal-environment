@@ -120,3 +120,7 @@ install_log.txt
 user_settings.json
 *.bak*
 *.tmp
+
+# Obsidian workspace files
+.obsidian/
+.obsidian/*
